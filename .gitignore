@@ -1,0 +1,9 @@
+# node
+node_modules
+
+# vitepress
+.vitepress
+
+# lib
+lib/
+esm/

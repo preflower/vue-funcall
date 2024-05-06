@@ -1,0 +1,13 @@
+{
+  "extends": [
+    "ted",
+    "ted/typescript",
+    "ted/vue"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "extraFileExtensions": [
+      ".vue"
+    ]
+  }
+}

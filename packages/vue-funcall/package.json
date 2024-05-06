@@ -1,0 +1,57 @@
+{
+  "name": "vue-funcall",
+  "version": "1.0.0",
+  "description": "A method that create component with function call",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./esm/index.d.ts",
+        "default": "./esm/index.js"
+      },
+      "require": {
+        "types": "./lib/index.d.ts",
+        "default": "./lib/index.js"
+      }
+    },
+    "./polyfill": {
+      "import": {
+        "types": "./esm/polyfill.d.ts",
+        "default": "./esm/polyfill.js"
+      },
+      "require": {
+        "types": "./lib/polyfill.d.ts",
+        "default": "./lib/polyfill.js"
+      }
+    }
+  },
+  "types": "lib/index.d.ts",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "build:cjs": "tsc --outDir lib",
+    "build:es": "tsc -m esNext --outDir esm",
+    "build": "pnpm build:cjs && pnpm build:es"
+  },
+  "keywords": [
+    "vue",
+    "function call component",
+    "function create component"
+  ],
+  "author": "Ted Lin <preflower.lin@gmail.com> (https://github.com/preflower)",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "vue": "^3.4.26"
+  },
+  "peerDependencies": {
+    "vue": "*"
+  },
+  "files": [
+    "lib/",
+    "esm/"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}

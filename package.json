@@ -1,0 +1,41 @@
+{
+  "name": "vue-funcall",
+  "version": "1.0.0",
+  "description": "A monorepo for vue-funcall",
+  "main": "index.js",
+  "scripts": {
+    "preinstall": "npx only-allow pnpm",
+    "docs:dev": "pnpm --filter docs run docs:dev",
+    "docs:build": "pnpm --filter docs run docs:build",
+    "build": "pnpm --filter vue-funcall run build",
+    "prepare": "husky install",
+    "ci:version": "pnpm changeset version && pnpm install --lockfile-only",
+    "ci:publish": "pnpm build && pnpm changeset publish"
+  },
+  "author": "Ted Lin <preflower.lin@gmail.com> (https://github.com/preflower)",
+  "license": "MIT",
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2",
+    "@commitlint/cli": "^16.3.0",
+    "@commitlint/config-conventional": "^16.2.4",
+    "eslint": "^8.47.0",
+    "eslint-config-ted": "^2.0.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.3.0"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx,vue}": [
+      "eslint --fix"
+    ]
+  },
+  "repository": "https://github.com/preflower/vue-funcall",
+  "bugs": {
+    "url": "https://github.com/preflower/vue-funcall/issues"
+  },
+  "homepage": "https://github.com/preflower/vue-funcall#readme"
+}
