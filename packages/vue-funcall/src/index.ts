@@ -1,8 +1,5 @@
-import { type AllowedComponentProps, type Component, type VNodeProps, createVNode, render, nextTick } from 'vue'
-
-export type ComponentProps<C extends Component> = C extends new (...args: any) => any
-  ? Omit<InstanceType<C>['$props'], keyof VNodeProps | keyof AllowedComponentProps>
-  : never
+import { type Component, createVNode, render, nextTick } from 'vue'
+import { type ComponentProps } from '@preflower/vue-use'
 
 export function createFunctionCall<T extends Component> (
   component: T,

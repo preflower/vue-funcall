@@ -53,5 +53,8 @@
   ],
   "publishConfig": {
     "access": "public"
+  },
+  "dependencies": {
+    "@preflower/vue-use": "^1.1.1"
   }
 }
