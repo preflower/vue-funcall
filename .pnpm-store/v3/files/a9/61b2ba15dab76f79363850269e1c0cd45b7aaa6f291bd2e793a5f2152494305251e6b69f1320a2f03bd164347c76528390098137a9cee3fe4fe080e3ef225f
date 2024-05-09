@@ -1,0 +1,2 @@
+import { Ref } from 'vue';
+export declare const useKeyboardDetector: () => [Ref<boolean | undefined>, Ref<number>];

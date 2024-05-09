@@ -1,0 +1,5 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.useKeyboardDetector = void 0;
+var use_keyboard_detector_1 = require("./use-keyboard-detector");
+Object.defineProperty(exports, "useKeyboardDetector", { enumerable: true, get: function () { return use_keyboard_detector_1.useKeyboardDetector; } });

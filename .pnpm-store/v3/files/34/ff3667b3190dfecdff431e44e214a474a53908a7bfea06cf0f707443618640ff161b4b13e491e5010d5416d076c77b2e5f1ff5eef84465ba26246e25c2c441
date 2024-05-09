@@ -1,0 +1,31 @@
+{
+  "name": "@preflower/utils",
+  "version": "1.1.0",
+  "description": "A utils for self",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "types": "lib/index.d.ts",
+  "typings": "lib/index.d.ts",
+  "keywords": [],
+  "author": "Ted Lin <preflower.lin@gmail.com> (https://github.com/preflower)",
+  "license": "ISC",
+  "repository": "https://github.com/preflower/use",
+  "bugs": {
+    "url": "https://github.com/preflower/use/issues"
+  },
+  "homepage": "https://github.com/preflower/use#readme",
+  "files": [
+    "lib/",
+    "esm/"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build:cjs": "tsc",
+    "build:es": "tsc -m esNext --outDir esm",
+    "build": "pnpm build:cjs && pnpm build:es",
+    "ci:version": "pnpm changeset version && pnpm install --lockfile-only",
+    "ci:publish": "pnpm build && pnpm changeset publish"
+  }
+}

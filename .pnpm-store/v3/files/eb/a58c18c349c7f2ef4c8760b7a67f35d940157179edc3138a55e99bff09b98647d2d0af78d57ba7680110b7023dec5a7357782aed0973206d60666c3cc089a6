@@ -1,0 +1,8 @@
+/**
+ * 格式化时间
+ * 在不使用 dayjs 这类 date 库时快速格式化时间
+ * @param time 待格式化的时间
+ * @param fmt 日期格式
+ * @returns 格式化后的时间
+ */
+export declare function format(time: any, fmt?: string): string;

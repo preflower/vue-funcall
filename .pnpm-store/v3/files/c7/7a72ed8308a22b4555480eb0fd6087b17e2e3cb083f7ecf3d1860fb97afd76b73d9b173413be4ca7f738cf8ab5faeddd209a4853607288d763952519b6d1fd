@@ -1,0 +1,6 @@
+/**
+ * 函数只会触发一次, 后面都直接返回该结果
+ * @param action 执行函数
+ * @returns 函数返回值
+ */
+export declare const idempotent: <T extends (...args: any[]) => any>(action: T) => (...args: any) => ReturnType<T>;

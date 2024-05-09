@@ -1,0 +1,26 @@
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+import { pick, toRawType } from './object';
+var isPropertyKey = function (val) { return ['String', 'Number', 'Symbol'].includes(toRawType(val)); };
+export function defineMap(defs, key, values) {
+    if (typeof values === 'undefined') {
+        return defs.map(function (def) { return def[key]; });
+    }
+    return defs.reduce(function (map, def) {
+        var _a;
+        var _key = def[key];
+        if (!isPropertyKey(_key))
+            return map;
+        var _val = Array.isArray(values) ? pick(def, values) : def[values];
+        return __assign(__assign({}, map), (_a = {}, _a[_key] = _val, _a));
+    }, {});
+}

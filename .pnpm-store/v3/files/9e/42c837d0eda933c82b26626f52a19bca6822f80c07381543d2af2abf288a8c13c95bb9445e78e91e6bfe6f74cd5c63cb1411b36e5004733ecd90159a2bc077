@@ -1,0 +1,23 @@
+/**
+ * 函数只会触发一次, 后面都直接返回该结果
+ * @param action 执行函数
+ * @returns 函数返回值
+ */
+export var idempotent = function (action) {
+    var called = false;
+    var result;
+    return function () {
+        var args = [];
+        for (var _i = 0; _i < arguments.length; _i++) {
+            args[_i] = arguments[_i];
+        }
+        if (called) {
+            return result;
+        }
+        else {
+            result = action.apply(void 0, args);
+            called = true;
+            return result;
+        }
+    };
+};

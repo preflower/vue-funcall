@@ -1,0 +1,29 @@
+/**
+ * 格式化时间
+ * 在不使用 dayjs 这类 date 库时快速格式化时间
+ * @param time 待格式化的时间
+ * @param fmt 日期格式
+ * @returns 格式化后的时间
+ */
+export function format(time, fmt) {
+    if (fmt === void 0) { fmt = 'YYYY MM dd HH:mm:ss'; }
+    var date = new Date(time);
+    var o = {
+        'M+': date.getMonth() + 1,
+        'd+': date.getDate(),
+        'h+': date.getHours() % 12 || 12,
+        'H+': date.getHours(),
+        'm+': date.getMinutes(),
+        's+': date.getSeconds()
+    };
+    if (/(y+)/.test(fmt)) {
+        fmt = fmt.replace(RegExp.$1, "".concat(date.getFullYear()).substr(4 - RegExp.$1.length));
+    }
+    for (var k in o) {
+        if (new RegExp("(".concat(k, ")")).test(fmt)) {
+            var value = o[k].toString();
+            fmt = fmt.replace(RegExp.$1, RegExp.$1.length === 1 ? value : "00".concat(value).substr(value.length));
+        }
+    }
+    return fmt;
+}

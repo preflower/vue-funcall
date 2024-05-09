@@ -1,0 +1,37 @@
+var EasyStorage = /** @class */ (function () {
+    function EasyStorage(storage) {
+        if (storage === 'session') {
+            this.storage = window.sessionStorage;
+        }
+        else {
+            this.storage = window.localStorage;
+        }
+    }
+    EasyStorage.prototype.get = function (key) {
+        var value = this.storage.getItem(key);
+        if (typeof value !== 'string') {
+            return value;
+        }
+        try {
+            return JSON.parse(value);
+        }
+        catch (e) {
+            return value;
+        }
+    };
+    EasyStorage.prototype.set = function (key, value) {
+        value = JSON.stringify(value);
+        this.storage.setItem(key, value);
+    };
+    EasyStorage.prototype.remove = function (key) {
+        this.storage.removeItem(key);
+    };
+    EasyStorage.prototype.clear = function () {
+        this.storage.clear();
+    };
+    return EasyStorage;
+}());
+export var storage = {
+    local: new EasyStorage('local'),
+    session: new EasyStorage('session')
+};

@@ -1,0 +1,6 @@
+/**
+ * 返回判断屏幕是否旋转的函数
+ * 通过闭包保存最新的屏幕值
+ * @returns () => boolean
+ */
+export declare function returnIsRotationFunction(): () => boolean;

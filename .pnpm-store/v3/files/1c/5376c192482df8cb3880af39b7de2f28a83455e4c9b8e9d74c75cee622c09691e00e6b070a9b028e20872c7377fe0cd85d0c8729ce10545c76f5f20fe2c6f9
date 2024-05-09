@@ -1,0 +1,41 @@
+{
+  "name": "@preflower/vue-use",
+  "version": "1.1.1",
+  "description": "A vue use library for self",
+  "type": "module",
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "types": "lib/index.d.ts",
+  "typings": "lib/index.d.ts",
+  "keywords": [],
+  "author": "Ted Lin <preflower.lin@gmail.com> (https://github.com/preflower)",
+  "license": "ISC",
+  "repository": "https://github.com/preflower/use",
+  "bugs": {
+    "url": "https://github.com/preflower/use/issues"
+  },
+  "homepage": "https://github.com/preflower/use#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "vue": "*"
+  },
+  "dependencies": {
+    "@preflower/utils": "^1.1.0"
+  },
+  "devDependencies": {
+    "vue": "^3.4.26"
+  },
+  "files": [
+    "lib/",
+    "esm/"
+  ],
+  "scripts": {
+    "build:cjs": "tsc",
+    "build:es": "tsc -m esnext --moduleResolution bundler --outDir esm",
+    "build": "pnpm build:cjs && pnpm build:es",
+    "ci:version": "pnpm changeset version && pnpm install --lockfile-only",
+    "ci:publish": "pnpm build && pnpm changeset publish"
+  }
+}

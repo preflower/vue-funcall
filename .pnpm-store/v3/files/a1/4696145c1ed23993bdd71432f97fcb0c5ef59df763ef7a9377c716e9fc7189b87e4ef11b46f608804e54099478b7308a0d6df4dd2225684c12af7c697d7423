@@ -1,0 +1,8 @@
+export declare const toRawType: (val: unknown) => string;
+/**
+ * 从目标对象中返回包含指定 key 的新对象
+ * @param target 目标对象
+ * @param keys 目标对象的 key 列表
+ * @returns 包含指定 key 的新对象
+ */
+export declare const pick: <T extends object>(target: T, keys: (keyof T)[]) => {};

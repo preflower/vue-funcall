@@ -1,0 +1,43 @@
+import { ref, onBeforeUnmount } from 'vue';
+import { returnIsRotationFunction } from '@preflower/utils';
+export var useKeyboardDetector = function () {
+    var initialHeight = document.documentElement.clientHeight;
+    var isOpened = ref();
+    var keyboardHeight = ref(0);
+    var isRotation = returnIsRotationFunction();
+    var handler = function () {
+        var _a;
+        var height = document.documentElement.clientHeight;
+        var tagName = (_a = document.activeElement) === null || _a === void 0 ? void 0 : _a.nodeName;
+        // 判断是否是旋转导致的resize
+        if (isRotation()) {
+            if (['INPUT', 'TEXTAREA'].includes(tagName)) {
+                document.activeElement.blur();
+            }
+            initialHeight = height;
+            return;
+        }
+        // 当前活动元素非input, textarea则一定无法唤起Keyboard
+        if (!['INPUT', 'TEXTAREA'].includes(tagName)) {
+            isOpened.value = false;
+            keyboardHeight.value = 0;
+            initialHeight = document.documentElement.clientHeight;
+            return;
+        }
+        // 在部分场景(例如：百度输入法开启关闭)会出现值存在小数点波动的情况
+        // 所以我们加个最小的偏移高度
+        if (Math.abs(initialHeight - height) > 50) {
+            isOpened.value = true;
+            keyboardHeight.value = initialHeight - height;
+        }
+        else {
+            isOpened.value = false;
+            keyboardHeight.value = 0;
+        }
+    };
+    window.addEventListener('resize', handler);
+    onBeforeUnmount(function () {
+        window.removeEventListener('resize', handler);
+    });
+    return [isOpened, keyboardHeight];
+};

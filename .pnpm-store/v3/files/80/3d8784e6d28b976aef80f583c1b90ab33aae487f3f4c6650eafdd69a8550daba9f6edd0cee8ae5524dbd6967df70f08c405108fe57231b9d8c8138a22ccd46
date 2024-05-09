@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getArrayFirst = void 0;
+/**
+ * 获取数组第一个值，若非数组则直接返回
+ * @param arr 源数组
+ * @returns {any}
+ */
+function getArrayFirst(arr) {
+    return Array.isArray(arr) ? arr[0] : arr;
+}
+exports.getArrayFirst = getArrayFirst;

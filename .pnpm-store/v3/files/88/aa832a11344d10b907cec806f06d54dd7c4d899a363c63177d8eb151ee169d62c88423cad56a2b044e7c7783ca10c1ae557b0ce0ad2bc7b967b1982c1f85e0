@@ -1,0 +1,24 @@
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+export var toRawType = function (val) { return Object.prototype.toString.call(val).slice(8, -1); };
+/**
+ * 从目标对象中返回包含指定 key 的新对象
+ * @param target 目标对象
+ * @param keys 目标对象的 key 列表
+ * @returns 包含指定 key 的新对象
+ */
+export var pick = function (target, keys) {
+    return keys.reduce(function (dict, key) {
+        var _a;
+        return (__assign(__assign({}, dict), (_a = {}, _a[key] = target[key], _a)));
+    }, {});
+};

@@ -1,0 +1,13 @@
+declare class EasyStorage {
+    storage: Storage;
+    constructor(storage: 'local' | 'session');
+    get<T = any>(key: string): T | null;
+    set(key: string, value: any): void;
+    remove(key: string): void;
+    clear(): void;
+}
+export declare const storage: {
+    local: EasyStorage;
+    session: EasyStorage;
+};
+export {};

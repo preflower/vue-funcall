@@ -1,0 +1,15 @@
+/**
+ * 返回判断屏幕是否旋转的函数
+ * 通过闭包保存最新的屏幕值
+ * @returns () => boolean
+ */
+export function returnIsRotationFunction() {
+    var w = window.screen.width;
+    var h = window.screen.height;
+    return function () {
+        var result = w === window.screen.width && h === window.screen.height;
+        w = window.screen.width;
+        h = window.screen.height;
+        return !result;
+    };
+}
