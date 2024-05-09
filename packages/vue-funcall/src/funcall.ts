@@ -76,7 +76,7 @@ export function createFuncall<T extends Component> (
     /**
      * Mount v-model event to listen component close
      */
-    extendProps[`update:${visible}`] = handleClose
+    extendProps[`onUpdate:${visible}`] = handleClose
   }
 
   const vm = createVNode(component, {
