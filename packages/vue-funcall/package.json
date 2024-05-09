@@ -1,6 +1,6 @@
 {
   "name": "vue-funcall",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A method that create component with function call",
   "main": "lib/index.js",
   "module": "esm/index.js",
@@ -58,5 +58,10 @@
   "dependencies": {
     "@preflower/vue-use": "^1.1.1",
     "lodash-es": "^4.17.21"
-  }
+  },
+  "repository": "https://github.com/preflower/vue-funcall",
+  "bugs": {
+    "url": "https://github.com/preflower/vue-funcall/issues"
+  },
+  "homepage": "https://github.com/preflower/vue-funcall#readme"
 }
