@@ -5,21 +5,17 @@ layout: home
 hero:
   name: "Vue Funcall"
   text: "A method that create component with function call"
-  tagline: My great project tagline
+  tagline: Make component more better
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
+      text: Guide
+      link: /guide
 
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - title: Flexible
+    details: Any component can be mounted in this way
+  - title: Concision
+    details: No need to render component in template
+  - title: Non-JSX
+    details: It is essentially different with JSX, It is designed to help users quickly create uninstall temporary components
 ---
-

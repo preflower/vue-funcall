@@ -5,9 +5,30 @@ A method that create component with function call
 
 ### Basic Usage
 ```ts
-import { createFunctionCall } from 'vue-funcall'
+import { createFuncall } from 'vue-funcall'
 
-const instance = createFunctionCall(Component, {
-  
-})
+createFuncall(Component, props)
+```
+
+### Outside close
+```ts
+import { createFuncall } from 'vue-funcall'
+
+const instance = createFuncall(Component, props)
+
+instance.close()
+```
+
+### Async return result
+```ts
+import { createFuncall } from 'vue-funcall'
+
+const asyncCall = () => {
+  return new Promise((resolve, reject) => {
+    createFuncall(Component, {
+      onSucceed: (result) => resolve(result),
+      onFailed: (result) => reject(result)
+    })
+  })
+}
 ```

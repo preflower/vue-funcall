@@ -2,8 +2,9 @@
 node_modules
 
 # vitepress
-.vitepress
+**/.vitepress/cache
+**/.vitepress/dist
 
 # lib
-lib/
-esm/
+**/lib/
+**/esm/

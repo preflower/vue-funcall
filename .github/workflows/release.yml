@@ -2,9 +2,11 @@ name: Release Package
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - '.changeset/**'
+    # Allows you to run this workflow manually from the Actions tab
+    workflow_dispatch:
 env:
   CI: true
   PNPM_CACHE_FOLDER: .pnpm-store
