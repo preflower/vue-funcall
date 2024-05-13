@@ -1,6 +1,6 @@
 {
   "name": "vue-funcall",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A method that create component with function call",
   "main": "lib/index.js",
   "module": "esm/index.js",
