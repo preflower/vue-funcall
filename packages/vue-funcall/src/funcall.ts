@@ -43,6 +43,10 @@ export function createFuncall<T extends Component> (
   const unmount = async () => {
     await nextTick()
     if (vm.el != null) {
+      /**
+       * Trigger vue renderer unmount logic, such as: `onUnmount` lifecycle.
+       */
+      render(null, wrapper)
       container.removeChild(wrapper)
     }
   }
