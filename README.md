@@ -10,9 +10,8 @@ $ pnpm install vue-funcall
 
 ### Basic Usage
 Pass it to the app as a plugin, make component mount on Vue instance.
-::: details
-This step can be ignored if you ensure that Vue context data will not be used in component
-:::
+
+> This step can be ignored if you ensure that Vue context data will not be used in component
 
 ```ts
 import { createApp } from 'vue'
