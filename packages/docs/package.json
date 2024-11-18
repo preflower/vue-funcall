@@ -13,7 +13,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vitepress": "^1.1.4",
+    "vitepress": "^1.5.0",
     "vue-funcall": "workspace:*"
   }
 }
