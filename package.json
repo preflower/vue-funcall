@@ -16,8 +16,8 @@
   "license": "MIT",
   "devDependencies": {
     "@changesets/cli": "^2.28.1",
-    "@commitlint/cli": "^16.3.0",
-    "@commitlint/config-conventional": "^16.2.4",
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
     "eslint": "^8.57.1",
     "eslint-config-ted": "^2.0.2",
     "husky": "^8.0.3",
