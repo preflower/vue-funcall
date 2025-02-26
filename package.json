@@ -2,6 +2,14 @@
   "name": "vue-funcall",
   "version": "0.0.1",
   "description": "A monorepo for vue-funcall",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://preflower.github.io/vue-funcall",
+  "bugs": {
+    "url": "https://github.com/preflower/vue-funcall/issues"
+  },
+  "repository": "https://github.com/preflower/vue-funcall",
+  "author": "Ted Lin <preflower.lin@gmail.com> (https://github.com/preflower)",
   "main": "index.js",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
@@ -12,16 +20,14 @@
     "ci:version": "pnpm changeset version && pnpm install --lockfile-only",
     "ci:publish": "pnpm build && pnpm changeset publish"
   },
-  "author": "Ted Lin <preflower.lin@gmail.com> (https://github.com/preflower)",
-  "license": "MIT",
   "devDependencies": {
     "@changesets/cli": "^2.28.1",
-    "@commitlint/cli": "^16.3.0",
-    "@commitlint/config-conventional": "^16.2.4",
-    "eslint": "^8.57.1",
-    "eslint-config-ted": "^2.0.2",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.3.0",
+    "@commitlint/cli": "^19.7.1",
+    "@commitlint/config-conventional": "^19.7.1",
+    "eslint": "^9.21.0",
+    "eslint-config-ted": "^4.0.9",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
     "vue-tsc": "^2.2.4"
   },
   "commitlint": {
@@ -33,10 +39,5 @@
     "*.{js,ts,tsx,vue}": [
       "eslint --fix"
     ]
-  },
-  "repository": "https://github.com/preflower/vue-funcall",
-  "bugs": {
-    "url": "https://github.com/preflower/vue-funcall/issues"
-  },
-  "homepage": "https://preflower.github.io/vue-funcall"
+  }
 }

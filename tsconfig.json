@@ -1,24 +1,28 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": false,
-    "skipLibCheck": true,
-    "strictNullChecks": true,
-    "esModuleInterop": true,
+    "jsx": "preserve",
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
     "module": "ESNext",
     "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "allowJs": false,
+    "strict": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
     "noImplicitReturns": true,
     "noUnusedLocals": true,
-    "noImplicitAny": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
     "declaration": true,
     "noEmitOnError": true,
-    "jsx": "preserve"
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "skipLibCheck": true
   }
 }

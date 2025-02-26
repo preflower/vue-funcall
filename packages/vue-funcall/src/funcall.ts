@@ -60,7 +60,7 @@ export function createFuncall<T extends Component> (
     }
   }
 
-  const extendProps: Record<string, any> = {}
+  const extendProps: Record<string, unknown> = {}
 
   if (onClosedEvent != null) {
     const onClosed = props[onClosedEvent]

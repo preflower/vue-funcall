@@ -2,66 +2,66 @@
   "name": "vue-funcall",
   "version": "1.0.3",
   "description": "A method that create component with function call",
-  "main": "lib/index.js",
-  "module": "esm/index.js",
-  "exports": {
-    ".": {
-      "import": {
-        "types": "./esm/index.d.ts",
-        "default": "./esm/index.js"
-      },
-      "require": {
-        "types": "./lib/index.d.ts",
-        "default": "./lib/index.js"
-      }
-    },
-    "./polyfill": {
-      "import": {
-        "types": "./esm/polyfill.d.ts",
-        "default": "./esm/polyfill.js"
-      },
-      "require": {
-        "types": "./lib/polyfill.d.ts",
-        "default": "./lib/polyfill.js"
-      }
-    }
-  },
-  "types": "lib/index.d.ts",
-  "typings": "lib/index.d.ts",
-  "scripts": {
-    "build:cjs": "tsc",
-    "build:es": "tsc -m esNext --outDir esm",
-    "build": "pnpm build:cjs && pnpm build:es"
-  },
   "keywords": [
     "vue",
     "function call component",
     "function create component"
   ],
-  "author": "Ted Lin <preflower.lin@gmail.com> (https://github.com/preflower)",
   "license": "MIT",
-  "devDependencies": {
-    "@types/lodash-es": "^4.17.12",
-    "typescript": "^5.7.3",
-    "vue": "^3.5.13"
+  "homepage": "https://preflower.github.io/vue-funcall",
+  "bugs": {
+    "url": "https://github.com/preflower/vue-funcall/issues"
+  },
+  "repository": "https://github.com/preflower/vue-funcall",
+  "author": "Ted Lin <preflower.lin@gmail.com> (https://github.com/preflower)",
+  "files": [
+    "esm/",
+    "lib/"
+  ],
+  "main": "lib/index.js",
+  "module": "esm/index.js",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "require": {
+        "types": "./lib/index.d.ts",
+        "default": "./lib/index.js"
+      },
+      "import": {
+        "types": "./esm/index.d.ts",
+        "default": "./esm/index.js"
+      }
+    },
+    "./polyfill": {
+      "require": {
+        "types": "./lib/polyfill.d.ts",
+        "default": "./lib/polyfill.js"
+      },
+      "import": {
+        "types": "./esm/polyfill.d.ts",
+        "default": "./esm/polyfill.js"
+      }
+    }
+  },
+  "typings": "lib/index.d.ts",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build:cjs": "tsc",
+    "build:es": "tsc -m esNext --outDir esm",
+    "build": "pnpm build:cjs && pnpm build:es"
   },
   "peerDependencies": {
     "vue": "*"
-  },
-  "files": [
-    "lib/",
-    "esm/"
-  ],
-  "publishConfig": {
-    "access": "public"
   },
   "dependencies": {
     "@preflower/vue-use": "^1.1.2",
     "lodash-es": "^4.17.21"
   },
-  "repository": "https://github.com/preflower/vue-funcall",
-  "bugs": {
-    "url": "https://github.com/preflower/vue-funcall/issues"
-  },
-  "homepage": "https://preflower.github.io/vue-funcall"
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.12",
+    "typescript": "^5.7.3",
+    "vue": "^3.5.13"
+  }
 }
