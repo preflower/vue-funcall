@@ -1,6 +1,6 @@
 import { type Component, createVNode, render, nextTick, type AppContext } from 'vue'
 import { type ComponentProps } from '@preflower/vue-use'
-import { isFunction } from 'lodash-es'
+import { isFunction } from 'es-toolkit'
 import { VueFuncallPlugin } from './plugin'
 
 const DEFAULT_OPTIONS = {

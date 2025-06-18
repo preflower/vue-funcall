@@ -57,10 +57,9 @@
   },
   "dependencies": {
     "@preflower/vue-use": "^1.1.2",
-    "lodash-es": "^4.17.21"
+    "es-toolkit": "^1.39.3"
   },
   "devDependencies": {
-    "@types/lodash-es": "^4.17.12",
     "typescript": "^5.8.3",
     "vue": "^3.5.16"
   }
