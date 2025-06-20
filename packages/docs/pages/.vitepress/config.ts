@@ -7,7 +7,8 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.svg',
     nav: [
-      { text: 'Guide', link: '/guide' }
+      { text: 'Guide', link: '/guide' },
+      { text: 'Example', link: '/example' }
     ],
     socialLinks: [
       { icon: 'github', link: 'https://github.com/preflower/vue-funcall' }

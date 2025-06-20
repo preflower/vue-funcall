@@ -96,3 +96,4 @@ const { close } = createFuncall(Component, props, options)
 | onClosed | Internal field of Component to listen Component closed, If Component are not similiar field, define `undefined` | `string` &#124; `undefined` | undefined |
 | container | Define component mount node, default is `document.body` | `HTMLElement` &#124; `undefined` | document.body |
 | appContext | For support multiple vue instance | `AppContext` | - |
+| slots | Component slots | `Slots` | - |

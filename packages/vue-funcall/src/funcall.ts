@@ -1,4 +1,4 @@
-import { type Component, createVNode, render, nextTick, type AppContext } from 'vue'
+import { type Component, createVNode, render, nextTick, type AppContext, Slots } from 'vue'
 import { type ComponentProps } from '@preflower/vue-use'
 import { isFunction } from 'es-toolkit'
 import { VueFuncallPlugin } from './plugin'
@@ -11,13 +11,13 @@ const DEFAULT_OPTIONS = {
 export interface CreateFuncallOptions {
   /**
    * Internal field of Component to control Component display or not
-   * If Component are not similiar field, define `undefined`
+   * If Component are not similar field, define `undefined`
    * default is `modelValue`
    */
   visible?: string
   /**
    * Internal field of Component to listen Component closed
-   * If Component are not similiar field, define `undefined`
+   * If Component are not similar field, define `undefined`
    * scenario: wait for modal fade out animation completed
    * default is `undefined`
    */
@@ -30,6 +30,10 @@ export interface CreateFuncallOptions {
    * For support multiple vue instance
    */
   appContext?: AppContext
+  /**
+   * Component slots
+   */
+  slots?: Slots
 }
 
 export function createFuncall<T extends Component> (
@@ -38,7 +42,7 @@ export function createFuncall<T extends Component> (
   options: CreateFuncallOptions = {}
 ) {
   const wrapper = document.createElement('div')
-  const { visible, onClosed: onClosedEvent, container, appContext } = Object.assign({}, DEFAULT_OPTIONS, options)
+  const { visible, onClosed: onClosedEvent, container, appContext, slots } = Object.assign({}, DEFAULT_OPTIONS, options)
 
   const unmount = async () => {
     await nextTick()
@@ -65,11 +69,11 @@ export function createFuncall<T extends Component> (
   if (onClosedEvent != null) {
     const onClosed = props[onClosedEvent]
 
-    const handleClosed = async (...paramters: Parameters<typeof onClosed>) => {
+    const handleClosed = async (...parameters: Parameters<typeof onClosed>) => {
       await unmount()
 
       if (isFunction(onClosed)) {
-        onClosed(...paramters)
+        onClosed(...parameters)
       }
     }
 
@@ -86,7 +90,7 @@ export function createFuncall<T extends Component> (
   const vm = createVNode(component, {
     ...props,
     ...extendProps
-  })
+  }, slots)
 
   if (appContext ?? VueFuncallPlugin._context) {
     vm.appContext = appContext ?? VueFuncallPlugin._context
