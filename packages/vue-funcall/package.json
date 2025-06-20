@@ -1,6 +1,6 @@
 {
   "name": "vue-funcall",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "A method that create component with function call",
   "keywords": [
     "vue",

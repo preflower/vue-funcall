@@ -1,5 +1,11 @@
 # vue-funcall
 
+## 1.1.0
+
+### Minor Changes
+
+- 17ddadd: feat: add slots support
+
 ## 1.0.3
 
 ### Patch Changes
