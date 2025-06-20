@@ -14,7 +14,7 @@
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "docs:dev": "pnpm --filter docs run docs:dev",
-    "docs:build": "pnpm --filter docs run docs:build",
+    "docs:build": "pnpm build && pnpm --filter docs run docs:build",
     "build": "pnpm --filter vue-funcall run build",
     "prepare": "husky install",
     "ci:version": "pnpm changeset version && pnpm install --lockfile-only",
