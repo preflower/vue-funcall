@@ -57,7 +57,7 @@
   },
   "dependencies": {
     "@preflower/vue-use": "^1.1.2",
-    "es-toolkit": "^1.39.10"
+    "es-toolkit": "^1.40.0"
   },
   "devDependencies": {
     "typescript": "^5.9.3",
