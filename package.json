@@ -27,7 +27,7 @@
     "eslint": "^9.39.2",
     "eslint-config-ted": "^4.0.9",
     "husky": "^9.1.7",
-    "lint-staged": "^15.5.2",
+    "lint-staged": "^16.2.7",
     "vue-tsc": "^2.2.12"
   },
   "commitlint": {
