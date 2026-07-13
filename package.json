@@ -24,11 +24,11 @@
     "@changesets/cli": "^2.31.0",
     "@commitlint/cli": "^20.5.3",
     "@commitlint/config-conventional": "^20.5.3",
-    "eslint": "^9.39.4",
+    "eslint": "^9.39.5",
     "eslint-config-ted": "^4.1.1",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
-    "vue-tsc": "^3.3.5"
+    "vue-tsc": "^3.3.7"
   },
   "commitlint": {
     "extends": [
