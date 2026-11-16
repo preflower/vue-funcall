@@ -38,7 +38,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       - name: Create and publish versions
-        uses: changesets/action@v1
+        uses: changesets/action@v2.1.2
         with:
           version: pnpm ci:version
           commit: "chore: update versions"
